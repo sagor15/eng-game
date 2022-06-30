@@ -5,7 +5,7 @@ const Input = () => {
     const [list , setList] = useState([]);
     const [task , setTask] = useState(false);
     useEffect(()=>{
-        const url = "http://localhost:5000/task";
+        const url = "https://quiet-temple-50318.herokuapp.com/task";
         fetch(url)
         .then(res=> res.json()).then(data=>setList(data));
     },[task])
@@ -16,7 +16,7 @@ const Input = () => {
         const name = e.target.name.value;
         console.log(name);
         e.input=""
-        fetch("http://localhost:5000/task " , {
+        fetch("https://quiet-temple-50318.herokuapp.com/task " , {
             method: "POST",
             headers:{
                 "Content-type":"application/json",
@@ -41,7 +41,7 @@ const Input = () => {
     const handleDelete = (id) => {
         console.log(id);
       
-        fetch(`http://localhost:5000/task/${id}`, {
+        fetch(`https://quiet-temple-50318.herokuapp.com/task/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

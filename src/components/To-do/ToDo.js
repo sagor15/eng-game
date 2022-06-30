@@ -13,7 +13,7 @@ const ToDo = () => {
     const [list , setList] = useState([]);
     const [task , setTask] = useState(false);
     useEffect(()=>{
-        const url = "http://localhost:5000/task";
+        const url = "https://quiet-temple-50318.herokuapp.com/task";
         fetch(url)
         .then(res=> res.json()).then(data=>setList(data));
     },[task])
@@ -21,7 +21,7 @@ const ToDo = () => {
     const handleDelete = (id) => {
         console.log(id);
       
-        fetch(`http://localhost:5000/task/${id}`, {
+        fetch(`https://quiet-temple-50318.herokuapp.com/task/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
